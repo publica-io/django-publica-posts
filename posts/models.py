@@ -5,7 +5,7 @@ from django.db import models
 from entropy import base
 from entropy.base import (
     TitleMixin, SlugMixin, CreatedMixin, ModifiedMixin, EnabledMixin,
-    MetadataMixin, AttributeMixin
+    MetadataMixin
 )
 
 from templates.mixins import TemplateMixin
@@ -46,8 +46,7 @@ class PostManager(models.Manager):
 
 
 class PostBase(TitleMixin, SlugMixin, CreatedMixin, ModifiedMixin,
-               EnabledMixin, MetadataMixin, AttributeMixin, TemplateMixin,
-               ImageMixin):
+               EnabledMixin, MetadataMixin, TemplateMixin, ImageMixin):
     """
     Post is the elemetary model of Content.  This class is abstract and
     utilised by the class below.
